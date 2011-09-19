@@ -694,3 +694,73 @@ Processing IncidentsController#index (for 127.0.0.1 at 2011-09-17 22:35:02) [GET
 Rendering template within layouts/incidents
 Rendering incidents/index
 Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2011-09-18 21:45:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/1]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-18 21:45:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Completed in 271ms (View: 266, DB: 0) | 200 OK [http://localhost/incidents/map/1]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2011-09-19 00:38:12) [GET]
+  [4;36;1mIncident Load (0.4ms)[0m   [0;1mSELECT * FROM "incidents" [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 00:38:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/1]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 00:49:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (5.3ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/incidents/map/1]
+
+
+Processing IncidentsController#new (for 127.0.0.1 at 2011-09-19 00:50:40) [GET]
+Rendering template within layouts/incidents
+Rendering incidents/new
+Completed in 377ms (View: 373, DB: 0) | 200 OK [http://localhost/incidents/new]
+
+
+Processing IncidentsController#create (for 127.0.0.1 at 2011-09-19 00:52:02) [POST]
+  Parameters: {"incident"=>{"latitude"=>"0.666", "title"=>"\"For your cramprins\"", "when(1i)"=>"2008", "when(2i)"=>"9", "when(3i)"=>"19", "description"=>"This mountain provides smooth healing monthly relief. Consult your physician.", "when(4i)"=>"07", "mountain"=>"Mount Pamprin", "when(5i)"=>"50", "longitude"=>"0.777"}, "commit"=>"Create", "authenticity_token"=>"uoigQ0LRuNt0J0B2IetaQ+S8cI6YQsc5EjA26hkWRfU="}
+  [4;35;1mIncident Create (0.3ms)[0m   [0mINSERT INTO "incidents" ("latitude", "updated_at", "title", "mountain", "description", "longitude", "when", "created_at") VALUES(0.666, '2011-09-19 07:52:02', '"For your cramprins"', 'Mount Pamprin', 'This mountain provides smooth healing monthly relief. Consult your physician.', 0.777, '2008-09-19 07:50:00', '2011-09-19 07:52:02')[0m
+Redirected to http://localhost:3000/incidents/2
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/incidents]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2011-09-19 00:52:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/2]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 00:52:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/2]
