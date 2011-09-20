@@ -21,6 +21,19 @@ class IncidentsController < ApplicationController
     end
   end
 
+ def show_with_map
+   @incident = Incident.find(params[:id])
+   respond_to do |format|
+    format.html {
+    }
+    format.xml {
+      render :text => @incident.to_xml(
+       :only => [:latitude, :longitude, :title, :description], 
+       :root => "name")
+    }
+   end
+ end
+
   # GET /incidents/new
   # GET /incidents/new.xml
   def new

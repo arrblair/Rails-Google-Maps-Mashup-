@@ -1,7 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.connect 'incidents/map/:id', :action=>'show_with_map', :controller=>'incidents'
+  map.connect 'incidents/map/:id.:format', :action=>'show_with_map', :controller=>'incidents'
   map.resources :incidents
+
+  map.connect 'incidents/new/:id', :action=>'create', :controller=>'incidents'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

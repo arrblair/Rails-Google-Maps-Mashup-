@@ -6,7 +6,7 @@ class CreateIncidents < ActiveRecord::Migration
       t.decimal :longitude
       t.datetime :when
       t.string :title
-      t.text :description:
+      t.text :description
       t.timestamps
     end
   end

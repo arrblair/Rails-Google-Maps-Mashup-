@@ -764,3 +764,784 @@ Rendering template within layouts/incidents
 Rendering incidents/show_with_map
 Rendered incidents/_map (0.4ms)
 Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/2]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 01:10:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/map/2]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 02:17:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Completed in 7ms (View: 0, DB: 0) | 200 OK [http://localhost/incidents/map/2]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 04:41:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+ERROR: compiling _run_erb_app47views47incidents47show_with_map46html46erb RAISED compile error
+/Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:35: syntax error, unexpected $undefined, expecting '}'
+...o_s); @output_buffer.concat "\n"
+                              ^
+/Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:36: syntax error, unexpected $undefined, expecting ')'
+@output_buffer.concat "\n"
+                        ^
+/Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:36: unterminated string meets end of file
+/Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:36: syntax error, unexpected $end, expecting ')'
+Function body:           def _run_erb_app47views47incidents47show_with_map46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<p>\n"
+@output_buffer.concat "  <b>Mountain:</b>\n"
+@output_buffer.concat "  "; @output_buffer.concat((h @incident.mountain ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  <b>Latitude:</b>\n"
+@output_buffer.concat "  "; @output_buffer.concat((h @incident.latitude ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  <b>Longitude:</b>\n"
+@output_buffer.concat "  "; @output_buffer.concat((h @incident.longitude ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  <b>When:</b>\n"
+@output_buffer.concat "  "; @output_buffer.concat((h @incident.when ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  <b>Title:</b>\n"
+@output_buffer.concat "  "; @output_buffer.concat((h @incident.title ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  <b>Description:</b>\n"
+@output_buffer.concat "  "; @output_buffer.concat((h @incident.description ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to 'Edit', edit_incident_path(@incident) ).to_s); @output_buffer.concat " |\n"
+@output_buffer.concat(( link_to 'Back', incidents_path ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( render (:partial=>'map', :locals=>{:data=>"#{@incident.id}.xml'}) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:36:in `compile!'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_view/renderable.rb:61:in `compile'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_view/renderable.rb:28:in `render'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_view/template.rb:205:in `render_template'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_view/base.rb:265:in `render'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_view/base.rb:262:in `render'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/base.rb:1252:in `render_for_file'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/base.rb:1328:in `default_render'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `send'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/filters.rb:606:in `process'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/base.rb:391:in `process'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/base.rb:386:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+/Users/arrblair/.rvm/gems/ruby-1.8.6-p420@headfirst/gems/rails-2.3.14/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:35: syntax error, unexpected $undefined, expecting '}'
+...o_s); @output_buffer.concat "\n"
+                              ^
+/Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:36: syntax error, unexpected $undefined, expecting ')'
+@output_buffer.concat "\n"
+                        ^
+/Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:36: unterminated string meets end of file
+/Users/arrblair/Desktop/headFirstrails/incidents/app/views/incidents/show_with_map.html.erb:36: syntax error, unexpected $end, expecting ')') on line #35 of app/views/incidents/show_with_map.html.erb:
+32: <%= link_to 'Edit', edit_incident_path(@incident) %> |
+33: <%= link_to 'Back', incidents_path %>
+34: 
+35: <%= render (:partial=>'map', :locals=>{:data=>"#{@incident.id}.xml'}) %>
+
+    app/views/incidents/show_with_map.html.erb:36:in `compile!'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (100.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 04:42:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/incidents/map/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 04:42:56) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/2.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 04:43:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 04:43:46) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/1.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2011-09-19 04:45:50) [GET]
+  [4;35;1mIncident Load (0.5ms)[0m   [0mSELECT * FROM "incidents" [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#new (for 127.0.0.1 at 2011-09-19 04:45:51) [GET]
+Rendering template within layouts/incidents
+Rendering incidents/new
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/incidents/new]
+
+
+Processing IncidentsController#create (for 127.0.0.1 at 2011-09-19 04:48:04) [POST]
+  Parameters: {"incident"=>{"latitude"=>"35.687006", "title"=>"\"Those high wakeful plains.\"", "when(1i)"=>"2007", "when(2i)"=>"5", "when(3i)"=>"19", "description"=>"Paint it brown. Hound.", "when(4i)"=>"05", "mountain"=>"Mount Methton", "when(5i)"=>"45", "longitude"=>"-105.938190"}, "commit"=>"Create", "authenticity_token"=>"uoigQ0LRuNt0J0B2IetaQ+S8cI6YQsc5EjA26hkWRfU="}
+  [4;36;1mIncident Create (0.4ms)[0m   [0;1mINSERT INTO "incidents" ("latitude", "updated_at", "title", "mountain", "description", "longitude", "when", "created_at") VALUES(35.687006, '2011-09-19 11:48:04', '"Those high wakeful plains."', 'Mount Methton', 'Paint it brown. Hound.', -105.93819, '2007-05-19 05:45:00', '2011-09-19 11:48:04')[0m
+Redirected to http://localhost:3000/incidents/3
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/incidents]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2011-09-19 04:48:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 04:48:22) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/maps/3" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 04:48:34) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 04:48:34) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/3.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 04:49:03) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/3.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 04:49:25) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/3.html" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 04:49:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 04:49:54) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/3.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 04:50:46) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/incidents/map/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 04:50:47) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/3.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 07:27:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 07:27:36) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/1.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#show_with_map (for 127.0.0.1 at 2011-09-19 07:29:18) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/arrblair/Desktop/headFirstrails/incidents/app/controllers/incidents_controller.rb:31: syntax error, unexpected tASSOC, expecting '}'
+       :only => [:latitude, :longitude, :title, :description], 
+               ^
+/Users/arrblair/Desktop/headFirstrails/incidents/app/controllers/incidents_controller.rb:31: syntax error, unexpected ',', expecting '}'
+       :only => [:latitude, :longitude, :title, :description], 
+                                                              ^):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#show_with_map (for 127.0.0.1 at 2011-09-19 07:29:57) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/arrblair/Desktop/headFirstrails/incidents/app/controllers/incidents_controller.rb:31: syntax error, unexpected tASSOC, expecting '}'
+       :only => [:latitude, :longitude, :title, :description], 
+               ^
+/Users/arrblair/Desktop/headFirstrails/incidents/app/controllers/incidents_controller.rb:31: syntax error, unexpected ',', expecting '}'
+       :only => [:latitude, :longitude, :title, :description], 
+                                                              ^):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 07:30:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 07:30:24) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/1.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 07:30:47) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/3.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 07:31:47) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/3.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 07:31:48) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/3.xml" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 07:33:33) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/incidents/map/3.xml]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 07:33:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (9.3ms)
+Completed in 57ms (View: 52, DB: 0) | 200 OK [http://localhost/incidents/map/1]
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 07:33:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIncident Load (0.3ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/map/1.xml]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 07:33:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/2]
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 07:33:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mIncident Load (0.3ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/map/2.xml]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 07:33:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mIncident Load (0.3ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/incidents/map/3]
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 07:33:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/map/3.xml]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 21:04:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/2]
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 21:04:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/map/2.xml]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 21:04:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/1]
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 21:04:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 1) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/map/1.xml]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 22:30:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.5ms)
+Completed in 27ms (View: 21, DB: 0) | 200 OK [http://localhost/incidents/map/2]
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 22:30:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/map/2.xml]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-09-19 22:36:07) [GET]
+
+ActionController::RoutingError (No route matches "/incidents/map/2" with {:method=>:get}):
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/arrblair/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 22:37:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.6ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/2]
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 22:37:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mIncident Load (0.3ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/map/2.xml]
+
+
+Processing IncidentsController#show_with_map (for 127.0.0.1 at 2011-09-19 22:37:53) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show_with_map
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/map/3]
+
+
+Processing IncidentsController#show_with_map to xml (for 127.0.0.1 at 2011-09-19 22:37:53) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 3) [0m
+Completed in 6ms (View: 0, DB: 0) | 200 OK [http://localhost/incidents/map/3.xml]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2011-09-19 23:40:16) [GET]
+  [4;36;1mIncident Load (0.7ms)[0m   [0;1mSELECT * FROM "incidents" [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+Completed in 34ms (View: 30, DB: 1) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#new (for 127.0.0.1 at 2011-09-19 23:40:42) [GET]
+Rendering template within layouts/incidents
+Rendering incidents/new
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/incidents/new]
+
+
+Processing IncidentsController#create (for 127.0.0.1 at 2011-09-19 23:44:57) [POST]
+  Parameters: {"incident"=>{"latitude"=>"64.175", "title"=>"WonkaWonkaWonka", "when(1i)"=>"2011", "when(2i)"=>"9", "when(3i)"=>"20", "description"=>"Bjork was here.", "when(4i)"=>"06", "mountain"=>"Mount BjDova", "when(5i)"=>"40", "longitude"=>"-51.733889"}, "commit"=>"Create", "authenticity_token"=>"uoigQ0LRuNt0J0B2IetaQ+S8cI6YQsc5EjA26hkWRfU="}
+  [4;35;1mIncident Create (0.4ms)[0m   [0mINSERT INTO "incidents" ("latitude", "updated_at", "title", "mountain", "description", "longitude", "when", "created_at") VALUES(64.175, '2011-09-20 06:44:57', 'WonkaWonkaWonka', 'Mount BjDova', 'Bjork was here.', -51.733889, '2011-09-20 06:40:00', '2011-09-20 06:44:57')[0m
+Redirected to http://localhost:3000/incidents/4
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/incidents]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2011-09-19 23:44:57) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+Rendered incidents/_map (5.1ms)
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/incidents/4]
+
+
+Processing IncidentsController#show to xml (for 127.0.0.1 at 2011-09-19 23:44:58) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/4.xml]
+
+
+Processing IncidentsController#edit (for 127.0.0.1 at 2011-09-19 23:45:15) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+Rendering template within layouts/incidents
+Rendering incidents/edit
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/incidents/4/edit]
+
+
+Processing IncidentsController#update (for 127.0.0.1 at 2011-09-19 23:45:26) [PUT]
+  Parameters: {"incident"=>{"latitude"=>"64.175", "title"=>"WonkaWonkaWonka", "when(1i)"=>"2011", "when(2i)"=>"9", "when(3i)"=>"20", "description"=>"Bjork was here. Maybe.", "when(4i)"=>"06", "mountain"=>"Mount BjDova", "when(5i)"=>"40", "longitude"=>"-51.733889"}, "commit"=>"Update", "authenticity_token"=>"uoigQ0LRuNt0J0B2IetaQ+S8cI6YQsc5EjA26hkWRfU=", "id"=>"4"}
+  [4;35;1mIncident Load (0.4ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+  [4;36;1mIncident Update (0.6ms)[0m   [0;1mUPDATE "incidents" SET "description" = 'Bjork was here. Maybe.', "updated_at" = '2011-09-20 06:45:26' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/incidents/4
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/incidents/4]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2011-09-19 23:45:26) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/4]
+
+
+Processing IncidentsController#show to xml (for 127.0.0.1 at 2011-09-19 23:45:26) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/4.xml]
+
+
+Processing IncidentsController#edit (for 127.0.0.1 at 2011-09-19 23:45:30) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+Rendering template within layouts/incidents
+Rendering incidents/edit
+Completed in 83ms (View: 78, DB: 0) | 200 OK [http://localhost/incidents/4/edit]
+
+
+Processing IncidentsController#update (for 127.0.0.1 at 2011-09-19 23:45:37) [PUT]
+  Parameters: {"incident"=>{"latitude"=>"64.175", "title"=>"WonkaWonkaWonka", "when(1i)"=>"2011", "when(2i)"=>"9", "when(3i)"=>"20", "description"=>"Bjork was here. Maybe while on vacation.", "when(4i)"=>"06", "mountain"=>"Mount BjDova", "when(5i)"=>"40", "longitude"=>"-51.733889"}, "commit"=>"Update", "authenticity_token"=>"uoigQ0LRuNt0J0B2IetaQ+S8cI6YQsc5EjA26hkWRfU=", "id"=>"4"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+  [4;35;1mIncident Update (0.4ms)[0m   [0mUPDATE "incidents" SET "description" = 'Bjork was here. Maybe while on vacation.', "updated_at" = '2011-09-20 06:45:37' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/incidents/4
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/incidents/4]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2011-09-19 23:45:37) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mIncident Load (0.2ms)[0m   [0;1mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+Rendered incidents/_map (0.4ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/incidents/4]
+
+
+Processing IncidentsController#show to xml (for 127.0.0.1 at 2011-09-19 23:45:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mIncident Load (0.2ms)[0m   [0mSELECT * FROM "incidents" WHERE ("incidents"."id" = 4) [0m
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/incidents/4.xml]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2011-09-19 23:45:52) [GET]
+  [4;36;1mIncident Load (0.6ms)[0m   [0;1mSELECT * FROM "incidents" [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/incidents/]
